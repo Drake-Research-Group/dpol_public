@@ -1,3 +1,6 @@
+### Warnings
+- Even though precompiled object files for ARM MacOS are provided, this program **will not** run on MacOS due to the use of large statically allocated arrays.
+
 ### Old Version Notes
 ```
 !   Revised Jan 5/23 to change dimensions 60 ... 68 to 70 ... 78
