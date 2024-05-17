@@ -2000,10 +2000,10 @@ subroutine genint(id, nj, ni, kdiv)
 
    icnt0 = icnt + 1
 
-   do i=1, 82
+   do i=1, 80
       icnt = icnt + 1
       at(icnt) = 1.q90*icnt
-      do j=1, 82
+      do j=1, 80
          jcs(i, j) = icnt0
       end do
    end do
@@ -2197,12 +2197,12 @@ subroutine genintx(id, nj, ni, kdiv)
    n2 = nc - 1
    icnt = 0
 
-   do i=1, 82
+   do i=1, 80
       icnt = icnt + 1
       at(icnt) = 1.q90
       jat0(i) = 1
 
-      do j=1, 82
+      do j=1, 80
          jat(i, j) = 0
       end do
    end do
@@ -2376,10 +2376,10 @@ subroutine genintx(id, nj, ni, kdiv)
 
    icnt0 = icnt + 1
 
-   do i=1, 82
+   do i=1, 80
       icnt = icnt + 1
       at(icnt) = 1.q90*icnt
-      do  j=1, 82
+      do  j=1, 80
          jcs(i, j) = icnt0
       end do
    end do
@@ -7391,7 +7391,7 @@ subroutine solve(a, f, x, chk, n, md, nd, kcyc)
 
    logical lext, ldot
    
-   dimension f(1), x(1), ak(12150), ss(12150), isgn(12150), &
+   dimension f(12150), x(1), ak(12150), ss(12150), isgn(12150), &
    &  a1(12150), md(12150), a(1)
 
    ldot = .false.
