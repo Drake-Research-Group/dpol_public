@@ -11,8 +11,8 @@ gfortran $MAIN ${MOD[@]} -o $OUT ${FLAGS[@]} -I ${INC[@]}
 
 if [ $? -eq 0 ]
 then
-  python scripts/date.py > data/DATE.DAT
-  ./dbigdq
+  # python scripts/date.py > data/DATE.DAT
+  # ./dbigdq
 else
   echo "Compilation failed"
 fi

@@ -552,7 +552,7 @@ subroutine hdiagl(h, n, iegen, u, md, nr, n7d)
    common/r1r/rap, egs, ltrid
 
    logical ltrid, hk
-   dimension h(1), u(n, n), x(1800), yi(1800), yj(1800), iq(1800), md(1)
+   dimension h(1), u(n, n), x(1800), yi(1800), yj(1800), iq(1800), md(12150)
    real*16 ck, dk, ek, gk, ys, rk, sk, tk, uk
 
    sq2 = sqrt(dqreal(0.5q0))
@@ -1913,12 +1913,12 @@ subroutine genint(id, nj, ni, kdiv)
 
    icnt = 0
 
-   do  i=1, 82
+   do  i=1, 80
       icnt = icnt + 1
       at(icnt) = 1.q90
       jat0(i) = 1
 
-      do  j=1, 82
+      do  j=1, 80
          jat(i, j) = 0
       end do
    end do
@@ -3610,7 +3610,7 @@ subroutine ham(psi, psi2, e, amm, loop, md, lder, ldump, kdiv, bscale)
    
    common/q1q/cpl16(9, 11)
    
-   dimension psi2(1), psi(1), dhm(9, 2), hmx(2), hmxx(2), md(12150), dhmx(9, 2),  &
+   dimension psi2(1), psi(12150), dhm(9, 2), hmx(2), hmxx(2), md(12150), dhmx(9, 2),  &
    &  d2d(2, 4), df1(2, 2), tt(10), jj(13), fdd(6), fddr(3, 2), df1x(2, 2)
    dimension cpd1x16(8), cpd2x16(8), cp116(12150), cp216(12150), cpd116(8), cpd216(8)
    dimension psum(30)
@@ -6033,7 +6033,7 @@ subroutine dumph(sh, ovb, dso, psi, e, nv1, md, ldump, cdump, ndump)
    common/h1h/ch(25), neig, nh, iz, lrgl, nspn, nv, l1max, nbet, nd, n1, n2,    &
    &   n1d, n2d, ltrans, iset, namm
    
-   dimension dso(1), sh(nv1), ovb(1), md(12150), psi(1)
+   dimension dso(1), sh(nv1), ovb(1), md(12150), psi(12150)
    
    character cdump*20
    
@@ -6097,7 +6097,7 @@ subroutine comb(h, psi, nv, md, itt, khm)
    common/s1s/faca(80), facb(80), ngv(100, 10), ng(100), &
    &  igrp(698), ngp, nngt
 
-   dimension th(14, 14), tth(14, 14), u(14, 14), psi(1), h(1), md(12150)
+   dimension th(14, 14), tth(14, 14), u(14, 14), psi(12150), h(1), md(12150)
    nng = nngt
    
    do j=2, nng
@@ -6510,7 +6510,7 @@ subroutine final(sh, ovb, v1, tot, psi, psi2, dso, e, ee, next, nv1, md, kontrol
    common/h1h/ch(25), neig, nh, iz, lrgl, nspn, nv, l1max, nbet, nd, n1, n2, &
    &  n1d, n2d, ltrans, iset, namm
    
-   dimension psi2(1), psi(1), dso(nv), sh(nv1), ovb(nv1), md(12150), psid(7), &
+   dimension psi2(1), psi(12150), dso(nv), sh(nv1), ovb(nv1), md(12150), psid(7), &
    &  tot(nv, nv), v1(nv, nv), ee(nv)
    
    data ni/12150/, klim/6/
@@ -6680,7 +6680,7 @@ subroutine addom(e, h, psi, md, khm)
    
    common/done/lr12, idone, lext
    
-   dimension psi(1), h(1), md(12150), jj(4), tt(6), ttp(6)
+   dimension psi(12150), h(1), md(12150), jj(4), tt(6), ttp(6)
    
    equivalence (jj(1), ja),(jj(2), jap),(jj(3), jb),(jj(4), jbp)
    
@@ -6849,7 +6849,7 @@ subroutine dnorm(dso, psi)
    &  ndp(12150), ndq(12150), nds(12150), ld1(12150), ld2(12150), pam, qam, maxc, &
    &  ia, nblk(9), nb, nblkx(9), nbx, maxbf, nrow(8998), lngth
    
-   dimension psi(1), dso(1)
+   dimension psi(12150), dso(1)
 
    alf = 2.q0*cp1(2)
    bet = 2.q0*cp2(2)
